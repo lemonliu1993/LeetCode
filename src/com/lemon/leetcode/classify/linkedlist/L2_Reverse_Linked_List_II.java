@@ -75,4 +75,6 @@ public class L2_Reverse_Linked_List_II {
             listNode = listNode.next;
         }
     }
+
+    //TODO 加头指针的解法，可以避免到处判断m==1
 }
