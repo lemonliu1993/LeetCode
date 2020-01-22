@@ -9,15 +9,16 @@ import java.util.Stack;
 public class L3_Min_Stack {
     Stack<Integer> stack = new Stack<>();
     Stack<Integer> minStack = new Stack<>();
+
     public void push(int x) {
-        if(stack.isEmpty()){
+        if (stack.isEmpty()) {
             stack.push(x);
             minStack.push(x);
-        }else{
+        } else {
             stack.push(x);
-            if(x>minStack.peek()){
+            if (x > minStack.peek()) {
                 minStack.push(minStack.peek());
-            }else{
+            } else {
                 minStack.push(x);
             }
         }
