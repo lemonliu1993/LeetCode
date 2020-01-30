@@ -21,7 +21,7 @@ public class L1_Search_Insert_Position {
         while (index == -1) {
             middle = (left + right) / 2;
             if (nums[middle] == target) {
-                return middle;
+                index = middle;
             } else if (nums[middle] > target) {
                 if (middle == 0 || nums[middle - 1] < target) {
                     index = middle;
