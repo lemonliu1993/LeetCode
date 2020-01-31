@@ -31,6 +31,25 @@ public class LPrepare_BST {
         }
     }
 
+    boolean bst_search(TreeNode node,int val){
+        if(node.val == val){
+            return true;
+        }
+        if(node.val>val){
+            if(node.left==null){
+                return false;
+            }else{
+                return bst_search(node.left,val);
+            }
+        }else{
+            if(node.right==null){
+                return false;
+            }else{
+                return bst_search(node.right,val);
+            }
+        }
+    }
+
     static class TreeNode {
         int val;
         TreeNode left;
@@ -68,6 +87,8 @@ public class LPrepare_BST {
         lPrepare_bst.insert(node,node4);
         lPrepare_bst.insert(node,node5);
         lPrepare_bst.preOrder_print(node,0);
+
+        System.out.println(lPrepare_bst.bst_search(node, 2));
 
     }
 }
