@@ -32,7 +32,7 @@ public class L5_Count_of_Smaller_Numbers_After_Self {
         List<Integer> result = new ArrayList<>(nums.length);
         result.add(0);
         for (int i = 1; i < reverse.length; i++) {
-            int val = root.insert(reverse[i],0);
+            int val = root.insert(reverse[i], 0);
             result.add(val);
         }
         Collections.reverse(result);
@@ -67,7 +67,7 @@ public class L5_Count_of_Smaller_Numbers_After_Self {
                     this.right = new BSTNode(val);
                     return result;
                 }
-                return this.right.insert(val,result);
+                return this.right.insert(val, result);
             }
 
         }
@@ -95,7 +95,7 @@ public class L5_Count_of_Smaller_Numbers_After_Self {
 
     public static void main(String[] args) {
 //        int[] a = new int[]{5, 2, 6, 1};
-        int[] a = new int[]{5,-7,9,1,3,5,-2,1};
+        int[] a = new int[]{5, -7, 9, 1, 3, 5, -2, 1};
 //        int[] a = new int[]{};
         L5_Count_of_Smaller_Numbers_After_Self demo = new L5_Count_of_Smaller_Numbers_After_Self();
         List<Integer> result = demo.countSmaller(a);
