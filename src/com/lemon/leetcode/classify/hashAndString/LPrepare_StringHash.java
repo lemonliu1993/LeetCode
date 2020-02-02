@@ -13,9 +13,10 @@ public class LPrepare_StringHash {
             charMap[s.charAt(i)]++;
         }
 
-        for (char i = 0; i < charMap.length; i++) {
+        for (int i = 0; i < charMap.length; i++) {
             if (charMap[i] != 0) {
-                System.out.println(i + "次数" + charMap[i]);
+//                System.out.println(i + "次数" + charMap[i]);
+                System.out.printf("%c"+"次数"+charMap[i]+"\n",i);
             }
         }
     }
