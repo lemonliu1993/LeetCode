@@ -26,16 +26,19 @@ public class L5_Repeated_DNA_Sequences {
         for (int i = 0; i < s.length() - 9; i++) {          //注意：这里是-9
             str = s.substring(i, i + 10);
             if (map.containsKey(str)) {
+                if (map.get(str) == 1) {
+                    result.add(str);
+                }
                 map.put(str, map.get(str) + 1);
             } else {
                 map.put(str, 1);
             }
         }
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            if (entry.getValue() > 1) {
-                result.add(entry.getKey());
-            }
-        }
+//        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+//            if (entry.getValue() > 1) {
+//                result.add(entry.getKey());
+//            }
+//        }
         return result;
     }
 
