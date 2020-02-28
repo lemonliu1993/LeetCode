@@ -36,6 +36,21 @@ public class L1_Implement_Stack_using_Queues {
         }
     }
 
+    public void push1(int x) {
+        if (queue1.isEmpty()) {
+            queue1.add(x);
+            return;
+        } else {
+            queue2.add(x);
+            while (!queue1.isEmpty()) {
+                queue2.add(queue1.poll());
+            }
+
+            queue1 = queue2;
+            queue2 = new LinkedList<>();
+        }
+    }
+
     /**
      * Removes the element on top of the stack and returns that element.
      */
