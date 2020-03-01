@@ -8,45 +8,50 @@ import java.util.Stack;
  */
 public class L2_Implement_Queue_using_Stacks {
 
-    /** Initialize your data structure here. */
-    Stack<Integer> stack1 = new Stack<>();
-    Stack<Integer> stack2 = new Stack<>();
+    /**
+     * Initialize your data structure here.
+     */
+    private Stack<Integer> stack1 = new Stack();
+    private Stack<Integer> stack2 = new Stack();
+
+    /**
+     * Initialize your data structure here.
+     */
     public L2_Implement_Queue_using_Stacks() {
 
     }
 
-
-    /** Push element x to the back of queue. */
+    /**
+     * Push element x to the back of queue.
+     */
     public void push(int x) {
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+        }
         stack1.push(x);
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
+        }
     }
 
-    /** Removes the element from in front of queue and returns that element. */
+    /**
+     * Removes the element from in front of queue and returns that element.
+     */
     public int pop() {
-        if(!stack2.isEmpty()){
-            return stack2.pop();
-        }else{
-            while(!stack1.isEmpty()){
-                stack2.push(stack1.pop());
-            }
-            return stack2.pop();
-        }
+        return stack1.pop();
     }
 
-    /** Get the front element. */
+    /**
+     * Get the front element.
+     */
     public int peek() {
-        if(!stack2.isEmpty()){
-            return stack2.peek();
-        }else{
-            while(!stack1.isEmpty()){
-                stack2.push(stack1.pop());
-            }
-            return stack2.peek();
-        }
+        return stack1.peek();
     }
 
-    /** Returns whether the queue is empty. */
+    /**
+     * Returns whether the queue is empty.
+     */
     public boolean empty() {
-        return stack1.isEmpty() && stack2.isEmpty();
+        return stack1.isEmpty();
     }
 }
