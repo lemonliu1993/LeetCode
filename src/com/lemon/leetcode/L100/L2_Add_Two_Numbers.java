@@ -37,7 +37,6 @@ public class L2_Add_Two_Numbers {
             node.next = new ListNode(sum % 10);
             node = node.next;
             isUp = sum / 10;
-
         }
         return result.next;
     }
