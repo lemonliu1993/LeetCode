@@ -16,13 +16,11 @@ public class L3_Longest_Substring_Without_Repeating_Characters {
         int index = 0;
         for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
-                index = index > map.get(s.charAt(i))+1 ? index : map.get(s.charAt(i))+1;
+                index = index > map.get(s.charAt(i)) + 1 ? index : map.get(s.charAt(i)) + 1;
             }
             len = len > i - index + 1 ? len : i - index + 1;
             map.put(s.charAt(i), i);
         }
-
-
         return len;
     }
 
